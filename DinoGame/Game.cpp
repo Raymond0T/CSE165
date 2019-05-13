@@ -20,30 +20,30 @@ Game::Game(){
 	#if defined WIN32
 	//shroomFileName = "../mushroom.png";
 	fireballFileName = "../fireball.bmp";
-	dinoFileName = "../dino.png";
+	dinoFileName = "../dinoWalk.png";
 	backgroundFileName = "../background.png";
 	cactusFileName = "../cactus.png";
 	bobcatFileName = "../cat.png";
 	#else
 	//shroomFileName = "mushroom.png";
 	fireballFileName = "fireball.bmp";
-    //dinoFileName = "dino.png";
+    dinoFileName = "dinoWalk.png";
 	backgroundFileName = "background.png";
 	cactusFileName = "cactus.png";
 	bobcatFileName = "cat.png";
 	#endif
 
     //mushroom = new TexRect(shroomFileName, -0.25, 0.5, 0.5, 0.5);
-    //dino = new AnimatedRect(dinoFileName, )
     //projectile = new Rect(-0.05, -0.8, 0.1, 0.1);
-    explosion = new AnimatedRect(fireballFileName, 6, 6, 64, false, false, -0.25, 0.8, 0.5, 0.5);
+   // explosion = new AnimatedRect(fireballFileName, 6, 6, 64, false, false, -0.25, 0.8, 0.5, 0.5);
+	dino = new AnimatedRect(dinoFileName, 2, 1, 100, true, true, -0.95, 0.10, 0.6, 0.35);
 	background = new TexRect(backgroundFileName, -2, 1, 4, 2);
 	background2 = new TexRect(backgroundFileName, -2, 1, 4, 2);
 	cactus = new TexRect(cactusFileName, 0.25, 0.40, 1.0, 0.95);
 	bobcat = new AnimatedRect(bobcatFileName, 4, 2, 100, true, false, -0.95, 0.10, 0.6, 0.35);
 
-	bobcat->playLoop();
-	bobcat->pause();
+	dino->playLoop();
+	dino->pause();
 	
 	currentX = background->getX();
 	newX = currentX;
@@ -70,11 +70,11 @@ Game::Game(){
 void Game::action(){
 
 	float modi = 0.14;
-	float bobcatY = bobcat->getY();
-	float bobcatX = bobcat->getX();
+	float dinoY = dino->getY();
+	float dinoX = dino->getX();
 
 	if (startGame) {
-		bobcat->resume();
+		dino->resume();
 
 		newX -= modi;
 		diff += modi;
@@ -93,13 +93,13 @@ void Game::action(){
 	}
 
 	
-	if (cactus->contains(bobcatX-0.20, bobcatY)) {
-		bobcat->pause();
+	if (cactus->contains(dinoX, dinoY)) {
+		dino->pause();
 		startGame = false;
 		hit = true;
-		bobcat->setW(0.4);
-		bobcat->setH(0.2);
-		bobcat->setY(-0.10);
+		dino->setW(0.4);
+		dino->setH(0.2);
+		dino->setY(-0.10);
 		stop();
 	}
 
@@ -109,7 +109,7 @@ void Game::draw() const {
 	if (backgroundVisible) {
 		background->draw(0.0);
 		background2->draw(0.0);
-		bobcat->draw(1.0);
+		dino->draw(1.0);
 		cactus->draw(1.0);
 	}
 }
@@ -119,36 +119,36 @@ void Game::handleKeyDown(unsigned char key, float x, float y){
 	//AnimatedRect(const char* map_filename, int rows, int cols, int rate, bool visible = false, bool animated = false, float x = 0, float y = 0, float w = 0.5, float h = 0.5)
 	
     if (key == ' '){
-		bobcatY =  0.50;
-			bobcatY += 0.05;
-			bobcat->setY(bobcatY);
+		dinoY =  0.50;
+			dinoY += 0.05;
+			dino->setY(dinoY);
 	
 
 		startGame = true;
     }
 	else if (key == 'w') {
-		bobcat->setY(0.50);
+		dino->setY(0.50);
 		startGame = true;
 	}
 	else if (key == 's') {
-		bobcat->setH(0.20);
-		bobcat->setY(-0.05);
+		dino->setH(0.20);
+		dino->setY(-0.05);
 	}
 }
 
 void Game::handleKeyUp(unsigned char key, float x, float y) {
 	if (key == ' ') {
 
-		bobcat->setY(0.10);
+		dino->setY(0.10);
 		startGame = true;
 	}
 	else if(key == 'w') {
-		bobcat->setY(0.10);
+		dino->setY(0.10);
 		startGame = true;
 	}
 	else if(key == 's') {
-		bobcat->setH(0.35);
-		bobcat->setY(0.10);
+		dino->setH(0.35);
+		dino->setY(0.10);
 	}
 }
 
@@ -159,5 +159,5 @@ Game::~Game(){
     //delete projectile;
 	delete background;
 	delete background2;
-	delete bobcat;
+	delete dino;
 }

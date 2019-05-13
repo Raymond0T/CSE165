@@ -7,7 +7,7 @@
 
 class Game: public AppComponent, private Timer{
     //TexRect* mushroom;
-	//AnimatedRect* dino;
+	AnimatedRect* dino;
 	AnimatedRect* bobcat;
     //Rect* projectile;
 	TexRect* background;
@@ -17,8 +17,8 @@ class Game: public AppComponent, private Timer{
 	float currentX;
 	float newX;
 	float diff;
-	float bobcatY;
-	float bobcatX;
+	float dinoY;
+	float dinoX;
 	bool backgroundVisible;
 	bool cactusVisible;
 	bool hit;

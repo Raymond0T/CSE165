@@ -17,9 +17,12 @@ class Game: public AppComponent, private Timer{
 	float currentX;
 	float newX;
 	float diff;
+	float bobcatY;
+	float bobcatX;
 	bool backgroundVisible;
 	bool cactusVisible;
 	bool hit;
+	bool startGame;
   /*
     bool projectileVisible;
     bool mushroomVisible;

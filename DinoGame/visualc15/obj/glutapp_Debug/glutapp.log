@@ -1,0 +1,69 @@
+﻿  Ad.cpp
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Ad.cpp(5): warning C4305: 'argument': truncation from 'double' to 'float'
+  AnimatedRect.cpp
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\AnimatedRect.cpp(74): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\AnimatedRect.cpp(75): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  App.cpp
+  Game.cpp
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(42): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(43): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(67): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(165): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(168): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(171): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(172): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(179): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(182): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(185): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\Game.cpp(186): warning C4305: 'argument': truncation from 'double' to 'float'
+  GlutApp.cpp
+  Rect.cpp
+  TexRect.cpp
+  TextBox.cpp
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\TextBox.cpp(29): warning C4018: '<': signed/unsigned mismatch
+  Timer.cpp
+  app_main.cpp
+  Generating Code...
+  SOIL.c
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\SOIL.c(1719): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\SOIL.c(1729): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\SOIL.c(1841): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+  image_DXT.c
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_DXT.c(92): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+  image_helper.c
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_helper.c(325): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_helper.c(366): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_helper.c(373): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_helper.c(415): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\image_helper.c(422): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  stb_image_aug.c
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(177): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(251): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(303): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(1557): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(2394): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(2709): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(2995): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(3209): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(3548): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stb_image_aug.c(3644): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stbi_DDS_aug_c.h(362): warning C4018: '>': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stbi_DDS_aug_c.h(366): warning C4018: '>': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stbi_DDS_aug_c.h(390): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stbi_DDS_aug_c.h(427): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\windows\stbi_DDS_aug_c.h(498): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\ucrt\stdio.h(208): note: see declaration of 'fopen'
+  Generating Code...
+  glutapp.vcxproj -> C:\Users\Raymond\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home\rtrau\CSE165\Final3\visualc15\obj\glutapp_Debug\glutapp.exe

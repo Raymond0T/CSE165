@@ -3,6 +3,7 @@
 #include <iostream>
 #include <time.h>
 #include <stdlib.h>
+#include <cstdlib>
 #include <ctime>
 
 #include "Game.h"
@@ -100,18 +101,10 @@ void Game::action(){
 			newX = -2.0;
 		}
 	}
+
 	if (jump || duck) {
 		//randomObject();
-		srand(time(0));
 
-		int pick = rand() % 2;
-
-		if (pick == 0) {
-			bird->setX(0.35);
-		}
-		else {
-			bird->setX(0.15);
-		}
 		float currentBird = bird->getX();
 		float newBird = currentBird;
 		float birdDiff = currentBird;
@@ -119,7 +112,7 @@ void Game::action(){
 
 		birdDiff += currentBird;
 		bird->setX(0 - diff);
-		
+
 		if (bird->contains(dinoX + 0.23, dinoY-0.18)) {
 			//dino->pause();
 			//startGame = false;
@@ -179,10 +172,10 @@ void Game::randomObject() {
 	int pick = rand() % 2;
 
 	if (pick == 0) {
-		bird->setX(0.35);
+		bird->setY(0.35);
 	}
 	else {
-		bird->setX(0.15);
+		bird->setY(0.15);
 	}
 }
 
@@ -228,17 +221,20 @@ void Game::handleKeyUp(unsigned char key, float x, float y) {
 		startGame = true;
 		gameOver = false;
 		jump = true;
+		randomObject();
 	}
 	else if(key == 'w') {
 		dino->setY(0.10);
 		startGame = true;
 		gameOver = false;
 		jump = true;
+		randomObject();
 	}
 	else if(key == 's') {
 		dino->setH(0.35);
 		dino->setY(0.10);
 		duck = true;
+		randomObject();
 	}
 }
 

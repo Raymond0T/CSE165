@@ -6,13 +6,11 @@
 #include "Timer.h"
 
 class Game: public AppComponent, private Timer{
-    //TexRect* mushroom;
 	AnimatedRect* dino;
-	AnimatedRect* bobcat;
-    //Rect* projectile;
 	TexRect* background;
 	TexRect* background2;
-	TexRect* cactus;
+	TexRect* gameover;
+	TexRect* bird;
 
 	float currentX;
 	float newX;
@@ -20,9 +18,15 @@ class Game: public AppComponent, private Timer{
 	float dinoY;
 	float dinoX;
 	bool backgroundVisible;
-	bool cactusVisible;
+	//bool cactusVisible;
 	bool hit;
 	bool startGame;
+	bool gameOver;
+	bool birdVisible;
+	bool jump;
+	bool duck;
+	//bool up;
+
   /*
     bool projectileVisible;
     bool mushroomVisible;
@@ -39,8 +43,9 @@ public:
     void draw() const ;
     void handleKeyDown(unsigned char, float, float);
 	void handleKeyUp(unsigned char, float, float);
-
+	void restartGame();
     void action();
+	void randomObject();
 
     ~Game();
 

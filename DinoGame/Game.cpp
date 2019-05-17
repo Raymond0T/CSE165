@@ -1,6 +1,9 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <iostream>
+#include <time.h>
+#include <stdlib.h>
+#include <ctime>
 
 #include "Game.h"
 
@@ -8,29 +11,26 @@ Game::Game(){
 
 	// Some cross-platform compatimility stuff
 
-	//const char* shroomFileName;
-	const char* fireballFileName;
     const char* dinoFileName;
     const char* backgroundFileName;
 	const char* bobcatFileName;
-	const char* cactusFileName;
+	const char* gameoverFileName;
+	const char* birdFileName;
+
 	// In Windows (Visual Studio only) the image files are found in the enclosing folder in relation to the project
 	// In other environments the image files are in the same folder as the project
 
 	#if defined WIN32
-	//shroomFileName = "../mushroom.png";
-	fireballFileName = "../fireball.bmp";
 	dinoFileName = "../dinoWalk.png";
 	backgroundFileName = "../background.png";
-	cactusFileName = "../cactus.png";
-	bobcatFileName = "../cat.png";
+	gameoverFileName = "../gameover.png";
+	birdFileName = "../bird.png";
 	#else
-	//shroomFileName = "mushroom.png";
-	fireballFileName = "fireball.bmp";
+
     dinoFileName = "dinoWalk.png";
 	backgroundFileName = "background.png";
-	cactusFileName = "cactus.png";
-	bobcatFileName = "cat.png";
+	gameoverFileName = "gameover.png";
+	birdFileName = "bird.png";
 	#endif
 
     //mushroom = new TexRect(shroomFileName, -0.25, 0.5, 0.5, 0.5);
@@ -39,20 +39,26 @@ Game::Game(){
 	dino = new AnimatedRect(dinoFileName, 2, 1, 100, true, true, -0.95, 0.10, 0.6, 0.35);
 	background = new TexRect(backgroundFileName, -2, 1, 4, 2);
 	background2 = new TexRect(backgroundFileName, -2, 1, 4, 2);
-	cactus = new TexRect(cactusFileName, 0.25, 0.40, 1.0, 0.95);
-	bobcat = new AnimatedRect(bobcatFileName, 4, 2, 100, true, false, -0.95, 0.10, 0.6, 0.35);
+	gameover = new TexRect(gameoverFileName,- 0.35, 0.50, 1.0, 0.95);
+	bird = new TexRect(birdFileName, 0.25, 0.35, 0.7, 0.5);
+	
 
 	dino->playLoop();
 	dino->pause();
+	
 	
 	currentX = background->getX();
 	newX = currentX;
 	diff = currentX;
 
+	//up = true;
+	jump = false;
+	duck = false;
+	birdVisible = true;
+	gameOver = false;
 	hit = false;
 	startGame = false;
 	backgroundVisible = true;
-	cactusVisible = false;
 	setRate(100);
 	start();
 
@@ -69,7 +75,9 @@ Game::Game(){
 
 void Game::action(){
 
+
 	float modi = 0.14;
+
 	float dinoY = dino->getY();
 	float dinoX = dino->getX();
 
@@ -81,82 +89,178 @@ void Game::action(){
 
 		background->setX(newX);
 		background2->setX(0 - diff);
-		cactus->setX(0- diff);
+		//randomObject(diff);
+		//bird->setX(0 - diff);
 
 		if (!(diff < 2)) {
 			background->setX(-2.0);
 			background2->setX(0.0);
-			cactus->setX(1.0);
+			//bird->setX(1.0);
 			diff = -2.0;
 			newX = -2.0;
 		}
 	}
+	if (jump || duck) {
+		//randomObject();
+		srand(time(0));
 
-	
-	if (cactus->contains(dinoX, dinoY)) {
+		int pick = rand() % 2;
+
+		if (pick == 0) {
+			bird->setX(0.35);
+		}
+		else {
+			bird->setX(0.15);
+		}
+		float currentBird = bird->getX();
+		float newBird = currentBird;
+		float birdDiff = currentBird;
+		float birdMove = 0.14;
+
+		birdDiff += currentBird;
+		bird->setX(0 - diff);
+		
+		if (bird->contains(dinoX + 0.23, dinoY-0.18)) {
+			//dino->pause();
+			//startGame = false;
+			//hit = true;
+			//gameOver = true;
+			restartGame();
+		}
+	}
+}
+
+/*
+void Game::detect() {
+	float currentBird = bird->getX();
+	float newBird = currentBird;
+	float birdDiff = currentBird;
+	float birdMove = 0.14;
+
+	birdDiff += currentBird;
+	bird->setX(0 - diff);
+
+
+	/*
+if (cactus->contains(dinoX - 0.10, dinoY)) {
+	dino->pause();
+	startGame = false;
+	hit = true;
+	gameOver = true;
+}
+
+
+	if (bird->contains(dinoX - 10, dinoY - 10)) {
 		dino->pause();
 		startGame = false;
 		hit = true;
-		dino->setW(0.4);
-		dino->setH(0.2);
-		dino->setY(-0.10);
-		stop();
+		gameOver = true;
 	}
-
 }
-
+*/
 void Game::draw() const {
 	if (backgroundVisible) {
 		background->draw(0.0);
 		background2->draw(0.0);
+		if (gameOver) {
+			gameover->draw(1.0);
+		}
 		dino->draw(1.0);
-		cactus->draw(1.0);
+		if (birdVisible) {
+			bird->draw(1.0);
+		}
 	}
 }
 
+
+void Game::randomObject() {
+	srand(time(0));
+	
+	int pick = rand() % 2;
+
+	if (pick == 0) {
+		bird->setX(0.35);
+	}
+	else {
+		bird->setX(0.15);
+	}
+}
+
+
 void Game::handleKeyDown(unsigned char key, float x, float y){
-	//bobcat = new AnimatedRect(bobcatFileName, 4, 2, 100, true, false, -0.95, 0.0, 0.6, 0.35);
-	//AnimatedRect(const char* map_filename, int rows, int cols, int rate, bool visible = false, bool animated = false, float x = 0, float y = 0, float w = 0.5, float h = 0.5)
+	// *********************NEED TO HOLD KEY DOWN FOR "1 - 2 SECONDS " SO GAMEOVER WILL BE GONE****************************************
 	
     if (key == ' '){
-		dinoY =  0.50;
-			dinoY += 0.05;
-			dino->setY(dinoY);
-	
-
+		dino->setY(0.50);
 		startGame = true;
+		//up = true;
+		gameOver = false;
+		jump = true;
     }
 	else if (key == 'w') {
 		dino->setY(0.50);
 		startGame = true;
+		gameOver = false;
+		jump = true;
 	}
 	else if (key == 's') {
 		dino->setH(0.20);
 		dino->setY(-0.05);
+		duck = false;
+	}
+	else if (key == 'r') {
+		restartGame();
+	}
+	else if (key == 'p') {
+		dino->pause();
+	}
+	else if (key == 'c') {
+		dino->resume();
 	}
 }
 
-void Game::handleKeyUp(unsigned char key, float x, float y) {
-	if (key == ' ') {
 
+
+void Game::handleKeyUp(unsigned char key, float x, float y) {
+	// *********************NEED TO HOLD KEY DOWN FOR "1 - 2 SECONDS " SO GAMEOVER WILL BE GONE****************************************
+	if (key == ' ') {
 		dino->setY(0.10);
 		startGame = true;
+		gameOver = false;
+		jump = true;
 	}
 	else if(key == 'w') {
 		dino->setY(0.10);
 		startGame = true;
+		gameOver = false;
+		jump = true;
 	}
 	else if(key == 's') {
 		dino->setH(0.35);
 		dino->setY(0.10);
+		duck = true;
 	}
 }
 
+
+void Game::restartGame() {
+	dino->pause();
+	hit = false;
+	gameOver = true;
+	startGame = false;
+	backgroundVisible = true;
+	background->setX(-2);
+	background2->setX(-2);
+	bird->setX(0.25);
+	dino->setY(0.10);
+	dino->setH(0.35);
+	dino->setW(0.60);
+
+}
+
+
 Game::~Game(){
     stop();
-   // delete mushroom;
-    //delete explosion;
-    //delete projectile;
 	delete background;
 	delete background2;
 	delete dino;

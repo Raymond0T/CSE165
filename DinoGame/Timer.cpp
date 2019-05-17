@@ -37,6 +37,7 @@ void Timer::stop(){
     running = false;
 }
 
+
 void Timer::setRate(int mills){
     interval = mills;
 }
